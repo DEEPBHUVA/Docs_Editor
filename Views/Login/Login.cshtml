@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Login Page";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@model Docs_Editor.Models.SEC_UserModel
+
+<div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+        <div class="front">
+            <img src="~/loginAssets/Images/frontImg.jpg" alt="">
+            <div class="text">
+                <span class="text-1">Every new friend is a <br> new adventure</span>
+                <span class="text-2">Let's get connected</span>
+            </div>
+        </div>
+        <div class="back">
+            <img class="backImg" src="~/loginAssets/Images/backImg.jpg" alt="">
+            <div class="text">
+                <span class="text-1">Complete miles of journey <br> with one step</span>
+                <span class="text-2">Let's get started</span>
+            </div>
+        </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+            <div class="login-form">
+                <div class="title">Login</div>
+                <form method="post" asp-action="Login" asp-controller="User_Login">
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="text-danger">@Html.Raw(TempData["Error"])</div>
+                    }
+                    <div class="input-boxes">
+                        <div class="input-box">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" asp-for="Email" placeholder="Enter your email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" asp-for="Password" placeholder="Enter your password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="text"><a href="#">Forgot password?</a></div>
+
+                        <div class="button input-box">
+                            <input type="submit" value="Sumbit">
+                        </div>
+                        <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="signup-form">
+                <div class="title">SignIn</div>
+                <form method="post" asp-action="SignIN" asp-controller="User_Login">
+                    <div class="input-boxes">
+                        <div class="input-box">
+                            <i class="fas fa-user"></i>
+                            <input type="text" asp-for="UserName" placeholder="Enter user name" required>
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" asp-for="Email" placeholder="Enter your email" required>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" asp-for="Password" placeholder="Enter your password" required>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="button input-box">
+                            <input type="submit" value="Sumbit">
+                        </div>
+                        <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

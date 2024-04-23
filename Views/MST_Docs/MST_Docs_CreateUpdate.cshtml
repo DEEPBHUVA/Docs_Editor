@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Create Document";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using System.Data;
+@model Docs_Editor.Models.MST_DocsModel;
+
+<style>
+    .form-label {
+        font-weight: bold;
+    }
+</style>
+
+<div class="blog_section">
+    <h1>Create Documents</h1>
+    <p>Let's Create Your Documents With Us...</p>
+    <hr />
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <form role="form" method="post" asp-controller="MST_Docs" asp-action="Save">
+                    @Html.HiddenFor(x => x.DocID)
+                    <div class="mb-2">
+                        <label for="title" class="form-label"><span class="text-danger">*</span>Title</label>
+                        <input type="text" class="form-control" id="title" placeholder="United Document" asp-for="Title">
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="content" class="form-label"><span class="text-danger">*</span>Content</label>
+                        <textarea id="tiny" rows="8" class="form-control" placeholder="Enter your Content" asp-for="Content"></textarea>
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+
+                    <hr />
+                    <div class="d-grid mb-3">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fa-solid fa-floppy-disk"></i> Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+}

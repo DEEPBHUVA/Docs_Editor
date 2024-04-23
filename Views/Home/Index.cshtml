@@ -1,0 +1,181 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Addresh_Book5th.BAL
+
+<!--banner section start -->
+<div class="banner_section layout_padding">
+
+    @if(CV.UserID() == null)
+    {
+
+    }
+    else
+    {
+        <h4 class="user">Hii, @CV.UserName() </h4>
+        <div id="greeting"></div>
+    }
+    
+    <div id="my_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="taital_main">
+                                <h4 class="banner_taital">DocCraft</h4>
+                                <p class="banner_text">
+                                    Welcome to DocCraft, where we specialize in crafting beautiful documents tailored to your needs. Whether you require stunning designs for presentations, reports, proposals, or any other document, our team is here to bring your vision to life.
+                                </p>
+                                <div class="read_bt"><a class="nav-link text-light" asp-controller="MST_Docs" asp-action="Index">Create Docs</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div><img src="~/assets/images/img-1.png" class="image_1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="taital_main">
+                                <h4 class="banner_taital">DocCraft</h4>
+                                <p class="banner_text">At DocCraft, we understand the importance of not only visual appeal but also clarity and professionalism in your documents. Our skilled designers and content creators work closely with you to ensure that every aspect of your document reflects your brand identity and communicates your message effectively.</p>
+                                <div class="read_bt"><a href="#">Read More</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div><img src="~/assets/images/img-1.png" class="image_1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="taital_main">
+                                <h4 class="banner_taital">DocCraft</h4>
+                                <p class="banner_text">
+                                    Not only do we excel in creating digital documents, but we also offer printing services, allowing you to bring your creations into the physical realm. Whether it's for business presentations, marketing materials, or personal projects, we ensure that the quality of your printed documents matches the excellence of our digital designs.  
+                                </p>
+                                <div class="read_bt"><a href="#">Read More</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div><img src="~/assets/images/img-1.png" class="image_1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev rounded-circle" href="#my_slider" role="button" data-slide="prev">
+            <i class=""><img src="~/assets/images/left-icon.png"></i>
+        </a>
+        <a class="carousel-control-next rounded-circle" href="#my_slider" role="button" data-slide="next">
+            <i class=""><img src="~/assets/images/right-icon.png"></i>
+        </a>
+    </div>
+</div>
+<!--banner section end -->
+      </div>
+
+
+<!--about section start -->
+<div class="about_section layout_padding mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="image_2"><img src="~/assets/images/img-2.png"></div>
+            </div>
+            <div class="col-md-6">
+                <h1 class="about_taital">About <span class="us_text">Us</span></h1>
+                <p class="about_text">
+                    "DocCraft: Your one-stop solution for stunning, tailor-made documents. Our expertise lies in creating visually captivating reports, presentations, and brochures that make a lasting impact. We offer comprehensive services including design, formatting, and printing, ensuring your documents are ready for distribution. Trust us to exceed your expectations with our dedication to quality and attention to detail. Explore the possibilities with DocCraft today!"
+                </p>
+                <div class="read_bt_1"><a href="#">Read More</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--about section end -->
+
+<div class="blog_section layout_padding">
+    <div class="container">
+        <h1 class="blog_taital"><span class="our_text">Create</span> Docs</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="about_text mt-5">DocCraft: Your go-to for custom, eye-catching documents. We specialize in reports, presentations, and brochures, offering design, formatting, and printing services. Count on us for quality and precision. Discover DocCraft today! </p>
+                <p class="about_text mt-2">Get started with creating your documents </p>
+                <div class="read_bt"><a class="nav-link text-light" asp-controller="MST_Docs" asp-action="Index">Create Docs</a></div>
+            </div>
+            <div class="col-md-6">
+                <div class="image_2"><img src="~/assets/images/img-7.png"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact_section layout_padding">
+         <div class="container">
+            <h1 class="touch_taital">Contact Us</h1>
+            <div class="contact_section_2">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="email_text">
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Name" name="Email">
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Phone Numbar" name="Email">
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Email" name="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="email-bt" placeholder="Message" name="Message">
+                        </div>
+                        <div class="send_btn"><a href="#">SEND</a></div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="map_main">
+                        <div class="map-responsive">
+                           <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Rajkot" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get the current time
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+
+        // Get the greeting based on the time
+        var greeting;
+        if (hours < 12) {
+            greeting = "Good Morning 🌞";
+        } else if (hours < 18) {
+            greeting = "Good Afternoon ☀️";
+        } else {
+            greeting = "Good Evening 🌜";
+        }
+
+        // Display the greeting in the designated element
+        var greetingElement = document.getElementById("greeting");
+        if (greetingElement) {
+            greetingElement.textContent = greeting;
+        }
+    });
+</script>
+

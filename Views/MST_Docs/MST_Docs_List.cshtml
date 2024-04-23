@@ -1,0 +1,102 @@
+﻿@{
+    ViewData["Title"] = "Docs List";
+}
+
+@using System.Data
+@model DataTable
+
+<style>
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Spacing between cards */
+    }
+
+    .card {
+        width: 250px;
+        height: 380px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden; /* Ensure content does not overflow */
+        transition: transform 0.3s ease; /* Add smooth transition on hover */
+    }
+
+    .card:hover {
+        transform: translateY(-10px); /* Move card slightly upwards on hover */
+    }
+
+    .card-body {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .card-title {
+        margin-bottom:20px;
+        font-size: 18px;
+        color: #333;
+        text-align: center; /* Center the title text */
+    }
+
+    .card-button {
+        margin-bottom: 20px; /* Push the button to the bottom of the card */
+        text-align: center; /* Center the button */
+    }
+
+    .card-link{
+        text-decoration:none;
+    }
+
+    .no_document{
+        width:100%;
+        padding:10px;
+        font-size:18px;
+        border-radius:8px;
+    }
+</style>
+
+<div class="blog_section">
+    <div class="row mt-4">
+        <div class="col-md-10">
+            <h1><b>All Docs</b></h1>
+        </div>
+        <div class="col-md-2">
+            <a asp-controller="MST_Docs" asp-action="Create" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create Document</a>
+        </div>
+    </div>
+    <hr />
+
+    <div class="container p-4 mt-2">
+        <div class="card-container">
+            @if (Model.Rows.Count > 0)
+            {
+                @foreach (DataRow dr in Model.Rows)
+                {
+                    <a href="@Url.Action("ViewDocs", "MST_Docs", new { DocsID = @dr["DocID"] })" class="card-link">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="~/Images/Docs_Logo.png" alt="Document Logo" />
+                            </div>
+                            <h6 class="card-title"><b>@dr["Title"]</b></h6>
+                        </div>
+                    </a>
+                }
+            }
+            else
+            {
+                <div class="no_document bg-danger text-light">
+                    No document found.
+                </div>
+            }
+            
+        </div>
+    </div>
+
+</div>
