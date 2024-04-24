@@ -66,6 +66,7 @@ namespace Docs_Editor.Controllers
             cmd.Parameters.AddWithValue("@UserID", UserID);
             cmd.Parameters.AddWithValue("@DocsID", DocID);
             cmd.ExecuteNonQuery();
+            TempData["Delete_Successfully"] = "Document Deleted Succesfully";
             return RedirectToAction("Index");
         }
 
@@ -124,11 +125,11 @@ namespace Docs_Editor.Controllers
             {
                 if (modelMST_Docs.DocID == null)
                 {
-                    TempData["CreateDocument"] = "Document Created Succesfully";
+                    TempData["Create_Successfully"] = "Document Created Succesfully";
                 }
                 else
                 {
-                    TempData["UpdateDocument"] = "Document Updated Succesfully";
+                    TempData["Update_Successfully"] = "Document Updated Succesfully";
                 }
             }
             con.Close();

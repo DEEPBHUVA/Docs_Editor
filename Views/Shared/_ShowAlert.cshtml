@@ -1,0 +1,33 @@
+﻿@if (TempData["Create_Successfully"] != null)
+{
+    <div id="successAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Create_Successfully"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["Update_Successfully"] != null)
+{
+    <div id="successAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Update_Successfully"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+@if (TempData["Delete_Successfully"] != null)
+{
+    <div id="successAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Delete_Successfully"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<script>
+    // Set timeout to hide the alert after 3 seconds
+    setTimeout(function () {
+        $('#successAlert').alert('close');
+    }, 3000);
+</script>
+
+
